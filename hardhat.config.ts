@@ -28,6 +28,13 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    mainnet: {
+      url: `https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_API_KEY}`,
+      accounts: {
+        mnemonic: process.env.MAINNET_MNEMONIC || "",
+      },
+      chainId: 1,
+    },
     sepolia: {
       url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_SEPOLIA_API_KEY}`,
       accounts: {
